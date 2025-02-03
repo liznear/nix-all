@@ -26,7 +26,7 @@
       }
     ];
 
-    configuration = extra_pkgs: { pkgs, ... }: {
+    configuration = sys: { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
 
       # List packages installed in system profile. To search by name, run:
@@ -34,7 +34,7 @@
       environment.systemPackages = [
         pkgs.vim
         pkgs.git
-      ] ++ (extra_pkgs pkgs);
+      ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
       fonts.packages = [
         pkgs.nerd-fonts.mononoki
@@ -61,9 +61,14 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      homebrew = {
+      homebrew = let
+        extra = ((import (./hosts + "/${sys}/extra_brews.nix")) {});
+      in
+      {
         enable = true;
         onActivation.cleanup = "zap";
+        brews = [] ++ extra.brews;
+        casks = [] ++ extra.casks;
       };
     };
 
@@ -78,10 +83,10 @@
       	    user = username;
       	  };
       	}
-        
+
         # Configuration
-        (configuration (import (./hosts + "/${sys}/extra_pkgs.nix")))
-        
+        (configuration sys)
+
         # Home manager
         home-manager.darwinModules.home-manager
         {

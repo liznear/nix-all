@@ -1,0 +1,4 @@
+#!/usr/bin/env
+
+xcode-select --select
+softwareupdate --install-rosetta

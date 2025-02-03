@@ -1,0 +1,8 @@
+{}:
+
+{
+  brews = [];
+  casks = [
+    "orbstack"
+  ];
+}
