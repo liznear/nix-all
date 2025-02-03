@@ -61,7 +61,10 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      homebrew.enable = true;
+      homebrew = {
+        enable = true;
+        onActivation.cleanup = "zap";
+      };
     };
   in
   {
