@@ -65,14 +65,29 @@
     };
   in
   {
-
-    
     # Build darwin flake using:
+
     # $ darwin-rebuild build --flake .#mac-server
     darwinConfigurations."mac-server" = nix-darwin.lib.darwinSystem {
       modules = homebrew_configurations ++ [
         configuration
         ./hosts/mac-server
+      ];
+    };
+
+    # $ darwin-rebuild build --flake .#mac-desktop
+    darwinConfigurations."mac-desktop" = nix-darwin.lib.darwinSystem {
+      modules = homebrew_configurations ++ [
+        configuration
+        ./hosts/mac-desktop
+      ];
+    };
+
+    # $ darwin-rebuild build --flake .#mac-work
+    darwinConfigurations."mac-work" = nix-darwin.lib.darwinSystem {
+      modules = homebrew_configurations ++ [
+        configuration
+        ./hosts/mac-work
       ];
     };
   };
