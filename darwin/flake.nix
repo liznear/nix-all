@@ -26,7 +26,7 @@
       }
     ];
 
-    configuration = { pkgs, ... }: {
+    configuration = extra_pkgs: { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
 
       # List packages installed in system profile. To search by name, run:
@@ -34,7 +34,7 @@
       environment.systemPackages = [
         pkgs.vim
         pkgs.git
-      ];
+      ] ++ extra_pkgs;
 
       fonts.packages = [
         pkgs.nerd-fonts.mononoki
@@ -66,47 +66,42 @@
         onActivation.cleanup = "zap";
       };
     };
+
+    build_system = sys: nix-darwin.lib.darwinSystem {
+      modules = [
+        # Install home brew
+        nix-homebrew.darwinModules.nix-homebrew
+      	{
+      	  nix-homebrew = {
+      	    enable = true;
+      	    enableRosetta = true;
+      	    user = username;
+      	  };
+      	}
+        
+        # Configuration
+        (configuration (import (./hosts + "/${sys}/extra_pkgs.nix")))
+        
+        # Home manager
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.nearsyh = import (./hosts + "/${sys}");
+        }
+      ];
+    };
   in
   {
     # Build darwin flake using:
 
     # $ darwin-rebuild build --flake .#mac-server
-    darwinConfigurations."mac-server" = nix-darwin.lib.darwinSystem {
-      modules = homebrew_configurations ++ [
-        configuration
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.nearsyh = import ./hosts/mac-server;
-        }
-      ];
-    };
+    darwinConfigurations."mac-server" = build_system "mac-server";
 
     # $ darwin-rebuild build --flake .#mac-desktop
-    darwinConfigurations."mac-desktop" = nix-darwin.lib.darwinSystem {
-      modules = homebrew_configurations ++ [
-        configuration
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.nearsyh = import ./hosts/mac-desktop;
-        }
-      ];
-    };
+    darwinConfigurations."mac-desktop" = build_system "mac-desktop";
 
     # $ darwin-rebuild build --flake .#mac-work
-    darwinConfigurations."mac-work" = nix-darwin.lib.darwinSystem {
-      modules = homebrew_configurations ++ [
-        configuration
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.nearsyh = import ./hosts/mac-work;
-        }
-      ];
-    };
+    darwinConfigurations."mac-work" = build_system "mac-work";
   };
 }
