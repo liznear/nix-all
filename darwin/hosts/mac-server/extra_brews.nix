@@ -2,7 +2,5 @@
 
 {
   brews = [];
-  casks = [
-    # "orbstack"
-  ];
+  casks = [];
 }

@@ -1,11 +1,9 @@
 { config, pkgs, lib, ... }:
 
 {
-  enable = true;
-  enableZshIntegration = true;
-  settings = {
-    theme = "catppuccin-latte";
-    font-family = "mononoki";
-    font-size = 16;
-  };
+  home.file.".config/ghostty/config".text = ''
+font-family = "Mononoki Nerd Font Mono"
+font-size = 16
+theme = "catppuccin-latte"
+'';
 }
