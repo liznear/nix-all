@@ -34,7 +34,7 @@
       environment.systemPackages = [
         pkgs.vim
         pkgs.git
-      ] ++ extra_pkgs;
+      ] ++ (extra_pkgs pkgs);
 
       fonts.packages = [
         pkgs.nerd-fonts.mononoki
