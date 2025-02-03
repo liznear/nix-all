@@ -71,8 +71,12 @@
     darwinConfigurations."mac-server" = nix-darwin.lib.darwinSystem {
       modules = homebrew_configurations ++ [
         configuration
-        ./hosts/common.nix
-        ./hosts/mac-server
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.nearsyh = import ./hosts/mac-server;
+        }
       ];
     };
 
@@ -80,8 +84,12 @@
     darwinConfigurations."mac-desktop" = nix-darwin.lib.darwinSystem {
       modules = homebrew_configurations ++ [
         configuration
-        ./hosts/common.nix
-        ./hosts/mac-desktop
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.nearsyh = import ./hosts/mac-desktop;
+        }
       ];
     };
 
@@ -89,8 +97,12 @@
     darwinConfigurations."mac-work" = nix-darwin.lib.darwinSystem {
       modules = homebrew_configurations ++ [
         configuration
-        ./hosts/common.nix
-        ./hosts/mac-work
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.nearsyh = import ./hosts/mac-work;
+        }
       ];
     };
   };
