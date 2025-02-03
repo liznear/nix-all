@@ -8,5 +8,7 @@
   imports = [
     ../common.nix
     ../../../home/ghostty.nix
+    ../../../home/aerospace.nix
+    ../../../home/ssh
   ];
 }
