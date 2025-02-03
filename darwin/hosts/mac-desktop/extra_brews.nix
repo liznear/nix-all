@@ -12,5 +12,6 @@
     "orbstack"
     "surge"
     "utm"
+    "ghostty"
   ];
 }

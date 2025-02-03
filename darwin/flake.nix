@@ -28,6 +28,7 @@
 
     configuration = sys: { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
+      nixpkgs.config.allowBroken = true;
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
@@ -67,6 +68,8 @@
       {
         enable = true;
         onActivation.cleanup = "zap";
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
         brews = [] ++ extra.brews;
         casks = [] ++ extra.casks;
       };
