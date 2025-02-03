@@ -71,6 +71,7 @@
     darwinConfigurations."mac-server" = nix-darwin.lib.darwinSystem {
       modules = homebrew_configurations ++ [
         configuration
+        ./hosts/common.nix
         ./hosts/mac-server
       ];
     };
@@ -79,6 +80,7 @@
     darwinConfigurations."mac-desktop" = nix-darwin.lib.darwinSystem {
       modules = homebrew_configurations ++ [
         configuration
+        ./hosts/common.nix
         ./hosts/mac-desktop
       ];
     };
@@ -87,6 +89,7 @@
     darwinConfigurations."mac-work" = nix-darwin.lib.darwinSystem {
       modules = homebrew_configurations ++ [
         configuration
+        ./hosts/common.nix
         ./hosts/mac-work
       ];
     };
