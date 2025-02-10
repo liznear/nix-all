@@ -13,5 +13,6 @@
     "surge"
     "utm"
     "ghostty"
+    "raycast"
   ];
 }

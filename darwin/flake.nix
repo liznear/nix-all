@@ -59,6 +59,16 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 6;
 
+      system.defaults = {
+        dock.autohide = false;
+        dock.persistent-apps = [
+	        "/Applications/Arc.app"
+          "/Applications/Ghostty.app"
+          "${pkgs.vscode}/Applications/Code.app"
+	      ];
+        dock.show-recents = false;
+      };
+
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
