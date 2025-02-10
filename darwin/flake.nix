@@ -60,13 +60,16 @@
       system.stateVersion = 6;
 
       system.defaults = {
-        dock.autohide = false;
-        dock.persistent-apps = [
-	        "/Applications/Arc.app"
-          "/Applications/Ghostty.app"
-          "${pkgs.vscode}/Applications/Visual Studio Code.app"
-	      ];
-        dock.show-recents = false;
+        dock = {
+          autohide = false;
+          persistent-apps = [
+	          "/Applications/Arc.app"
+            "/Applications/Ghostty.app"
+            "${pkgs.vscode}/Applications/Visual Studio Code.app"
+	        ];
+          persistent-others = [];
+          show-recents = false;
+        };
       };
 
       # The platform the configuration will be used on.

@@ -14,5 +14,6 @@
     "utm"
     "ghostty"
     "raycast"
+    "steam"
   ];
 }
