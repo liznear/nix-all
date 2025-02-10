@@ -9,5 +9,6 @@
   imports = [
     ../../home/zsh.nix
     ../../home/starship.nix
+    ../../home/atuin.nix
   ];
 }
