@@ -64,7 +64,7 @@
         dock.persistent-apps = [
 	        "/Applications/Arc.app"
           "/Applications/Ghostty.app"
-          "${pkgs.vscode}/Applications/Code.app"
+          "${pkgs.vscode}/Applications/Visual Studio Code.app"
 	      ];
         dock.show-recents = false;
       };
