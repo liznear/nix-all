@@ -15,5 +15,6 @@
     "ghostty"
     "raycast"
     "steam"
+    "whisky"
   ];
 }
