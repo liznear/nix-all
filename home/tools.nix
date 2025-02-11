@@ -1,4 +1,13 @@
+{ config, pkgs, lib, ... }:
+
 {
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.htop = {
+    enable = true;
+  };
   programs.atuin = {
     enable = true;
     settings = {
