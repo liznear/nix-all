@@ -35,6 +35,7 @@
       environment.systemPackages = [
         pkgs.vim
         pkgs.git
+        pkgs.devenv
       ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
       fonts.packages = [
