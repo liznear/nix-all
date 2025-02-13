@@ -38,6 +38,12 @@
         pkgs.devenv
       ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
+      environment.variables = {
+        EDITOR = "vim";
+        VISUAL = "vim";
+        NIX_CONFIG = builtins.getEnv "NIX_CONFIG";
+      };
+
       fonts.packages = [
         pkgs.nerd-fonts.mononoki
       ];

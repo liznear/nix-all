@@ -21,4 +21,9 @@
     };
     enableZshIntegration = true;
   };
+  programs.git = {
+    enable = true;
+    userEmail = "nearsy.h@gmail.com";
+    userName = "nearsyh";
+  };
 }
