@@ -37,7 +37,7 @@
       environment.systemPackages = [
         pkgs.vim
         pkgs.git
-        pkgs.devenv
+        pkgs.devbox
       ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
       environment.variables = {
