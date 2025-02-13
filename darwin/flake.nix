@@ -15,6 +15,8 @@
   let
     username = "nearsyh";
 
+    nixConfig = builtins.getEnv "NIX_CONFIG";
+
     homebrew_configurations = [
       nix-homebrew.darwinModules.nix-homebrew
       {
@@ -41,7 +43,7 @@
       environment.variables = {
         EDITOR = "vim";
         VISUAL = "vim";
-        NIX_CONFIG = builtins.getEnv "NIX_CONFIG";
+        NIX_CONFIG = nixConfig;
       };
 
       fonts.packages = [
