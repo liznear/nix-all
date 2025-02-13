@@ -49,6 +49,10 @@
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
+      nix.settings.trusted-users = ["root" "nearsyh"];
+      nix.settings.substituters = [
+        "https://mirrors.ustc.edu.cn/nix-channels/store"
+      ];
 
       # Enable alternative shell support in nix-darwin.
       programs.zsh.enable = true;

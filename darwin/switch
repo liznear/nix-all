@@ -2,4 +2,4 @@
 
 git add -A
 
-darwin-rebuild switch --flake ".#mac-${1}"
+darwin-rebuild switch --flake ".#mac-${MACHINE}"
