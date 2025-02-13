@@ -25,5 +25,8 @@
     enable = true;
     userEmail = "nearsy.h@gmail.com";
     userName = "nearsyh";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 }
