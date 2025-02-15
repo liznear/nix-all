@@ -21,6 +21,12 @@
     };
     enableZshIntegration = true;
   };
+  programs.zellij = {
+    enable = true;
+    settings = {
+      theme = "catppuccin-latte";
+    };
+  };
   programs.git = {
     enable = true;
     userEmail = "nearsy.h@gmail.com";

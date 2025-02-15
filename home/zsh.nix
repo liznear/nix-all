@@ -9,6 +9,12 @@
         "git"
       ];
     };
+    shellAliases = {
+      ll = "ls -la";
+      j = "just";
+      z = "zellij";
+      za = "zellij attach";
+    };
     plugins = [
       {
         name = "zsh-syntax-highlighting";
