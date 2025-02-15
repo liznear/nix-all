@@ -38,6 +38,7 @@
         pkgs.vim
         pkgs.git
         pkgs.devbox
+        pkgs.wget
       ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
       environment.variables = {
