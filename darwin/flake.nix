@@ -39,6 +39,7 @@
         pkgs.git
         pkgs.devbox
         pkgs.wget
+        pkgs.just
       ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
       environment.variables = {
