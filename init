@@ -1,4 +1,6 @@
 #!/usr/bin/env
 
-xcode-select --select
-softwareupdate --install-rosetta
+if [[ "$(uname)" == "Darwin" ]]; then
+  xcode-select --select
+  softwareupdate --install-rosetta
+fi
