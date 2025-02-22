@@ -7,6 +7,6 @@
 
   imports = [
     ../common.nix
-    ../../../home/atuin.nix
+    ../../home/atuin.nix
   ];
 }

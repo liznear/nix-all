@@ -7,8 +7,8 @@
   };
 
   imports = [
-    ../../home/zsh.nix
-    ../../home/starship.nix
-    ../../home/tools.nix
+    ../home/zsh.nix
+    ../home/starship.nix
+    ../home/tools.nix
   ];
 }

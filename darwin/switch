@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-
-git add -A
-
-darwin-rebuild switch --flake ".#mac-${MACHINE}"

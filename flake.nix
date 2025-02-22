@@ -103,7 +103,7 @@
       };
     };
 
-    build_system = sys: nix-darwin.lib.darwinSystem {
+    build_darwin_system = sys: nix-darwin.lib.darwinSystem {
       modules = [
         # Install home brew
         nix-homebrew.darwinModules.nix-homebrew
@@ -132,12 +132,12 @@
     # Build darwin flake using:
 
     # $ darwin-rebuild build --flake .#mac-server
-    darwinConfigurations."mac-server" = build_system "mac-server";
+    darwinConfigurations."mac-server" = build_darwin_system "mac-server";
 
     # $ darwin-rebuild build --flake .#mac-desktop
-    darwinConfigurations."mac-desktop" = build_system "mac-desktop";
+    darwinConfigurations."mac-desktop" = build_darwin_system "mac-desktop";
 
     # $ darwin-rebuild build --flake .#mac-work
-    darwinConfigurations."mac-work" = build_system "mac-work";
+    darwinConfigurations."mac-work" = build_darwin_system "mac-work";
   };
 }

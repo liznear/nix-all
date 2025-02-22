@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+git add -A
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  darwin-rebuild switch --flake ".#mac-${MACHINE}"
+else
+  nixos-rebuild switch --flake ".#linux-${MACHINE}"
+fi
