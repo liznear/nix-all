@@ -1,4 +1,4 @@
-{ opAgent, prefix, ... }:
+{ prefix, ... }:
 
 { config, pkgs, lib, ... }:
 
