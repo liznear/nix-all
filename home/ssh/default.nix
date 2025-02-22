@@ -23,13 +23,8 @@ Host neargit
   User git
   IdentityFile ~/.ssh/near.pub
 
-Host mini-ubuntu
-  HostName 192.168.2.207
-  User nearsyh
-  IdentityFile ~/.ssh/near.pub
-
-Host mini-nix
-  HostName 192.168.64.6
+Host linux-home
+  HostName 192.168.2.159
   User nearsyh
   IdentityFile ~/.ssh/near.pub
   SetEnv TERM=xterm-256color
