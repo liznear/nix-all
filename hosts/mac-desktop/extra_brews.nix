@@ -1,7 +1,9 @@
 {}:
 
 {
-  brews = [];
+  brews = [
+    "borders"
+  ];
   casks = [
     "1password" # TODO: configuration
     "arc"

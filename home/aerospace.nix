@@ -4,6 +4,10 @@
   home.file.".config/aerospace/aerospace.toml".text = ''
 # Reference: https://github.com/i3/i3/blob/next/etc/config
 
+after-startup-command = [
+  'exec-and-forget borders active_color=0xff65ba94 inactive_color=0xff494d64 width=8.0'
+]
+
 # i3 doesn't have "normalizations" feature that why we disable them here.
 # But the feature is very helpful.
 # Normalizations eliminate all sorts of weird tree configurations that don't make sense.

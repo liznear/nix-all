@@ -100,6 +100,9 @@
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
         onActivation.upgrade = true;
+        taps = [
+          "FelixKratz/formulae"
+        ];
         brews = [] ++ extra.brews;
         casks = [] ++ extra.casks;
       };
