@@ -7,6 +7,5 @@
 
   imports = [
     ../common.nix
-    ../../home/atuin.nix
   ];
 }
