@@ -25,6 +25,7 @@ Host linux-home
   User nearsyh
   ForwardAgent yes
   IdentityFile ~/.ssh/liz.pub
+  SetEnv TERM=xterm-256color
 '';
 
   home.file.".ssh" = {
