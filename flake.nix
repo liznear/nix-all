@@ -127,6 +127,21 @@
         }
       ];
     };
+
+    build_linux_system = sys: nixpkgs.lib.nixosSystem {
+      modules = [
+        # Configuration
+        (configuration sys)
+
+        # Home manager
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.nearsyh = import (./hosts + "/${sys}");
+        }
+      ];
+    };
   in
   {
     # Build darwin flake using:
@@ -139,5 +154,8 @@
 
     # $ darwin-rebuild build --flake .#mac-work
     darwinConfigurations."mac-work" = build_darwin_system "mac-work";
+
+    # $ nixos-rebuild switch --flake ".#linux-${MACHINE}"
+    nixosConfigurations."linux-server" = build_linux_system "linux-server";
   };
 }
