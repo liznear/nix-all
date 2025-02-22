@@ -28,19 +28,21 @@
       }
     ];
 
+    systemPackages = { sys, pkgs, ...}: [
+      pkgs.vim
+      pkgs.git
+      pkgs.devbox
+      pkgs.wget
+      pkgs.just
+    ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
+
     configuration = sys: { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
       nixpkgs.config.allowBroken = true;
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages = [
-        pkgs.vim
-        pkgs.git
-        pkgs.devbox
-        pkgs.wget
-        pkgs.just
-      ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
+      environment.systemPackages = systemPackages { sys pkgs };
 
       environment.variables = {
         EDITOR = "vim";
@@ -78,10 +80,10 @@
         dock = {
           autohide = false;
           persistent-apps = [
-	          "/Applications/Arc.app"
+            "/Applications/Arc.app"
             "/Applications/Ghostty.app"
             "${pkgs.vscode}/Applications/Visual Studio Code.app"
-	        ];
+          ];
           persistent-others = [];
           show-recents = false;
         };
@@ -107,13 +109,13 @@
       modules = [
         # Install home brew
         nix-homebrew.darwinModules.nix-homebrew
-      	{
-      	  nix-homebrew = {
-      	    enable = true;
-      	    enableRosetta = true;
-      	    user = username;
-      	  };
-      	}
+        {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            user = username;
+          };
+        }
 
         # Configuration
         (configuration sys)
@@ -128,18 +130,10 @@
       ];
     };
 
-    build_linux_system = sys: home-manager.lib.homeManagerConfiguration {
+    build_linux_system = {sys, pkgs}: home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        # Configuration
-        (configuration sys)
-
-        # Home manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.nearsyh = import (./hosts + "/${sys}");
-        }
+        ((import ./hosts/linux-server) { systemPackages })
       ];
     };
   in
@@ -156,6 +150,9 @@
     darwinConfigurations."mac-work" = build_darwin_system "mac-work";
 
     # $ ./switch linux-server
-    homeConfigurations."linux-server" = build_linux_system "linux-server";
+    homeConfigurations."linux-server" = build_linux_system {
+      sys = "linux-server";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    };
   };
 }
