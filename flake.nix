@@ -137,7 +137,10 @@
       inherit pkgs;
       modules = [
         ((import ./hosts/linux-server) {
-          systemPackages=systemPackages;
+          systemPackages = systemPackages {
+            sys=sys;
+            pkgs=pkgs;
+          };
         })
       ];
     };
