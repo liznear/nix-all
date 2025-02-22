@@ -69,9 +69,6 @@
         "https://mirrors.ustc.edu.cn/nix-channels/store"
       ];
 
-      # Enable alternative shell support in nix-darwin.
-      programs.zsh.enable = true;
-
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
