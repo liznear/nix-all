@@ -26,6 +26,7 @@
     settings = {
       theme = "catppuccin-latte";
     };
+    enableZshIntegration = false;
   };
   programs.git = {
     enable = true;

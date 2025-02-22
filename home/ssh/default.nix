@@ -23,9 +23,8 @@ Host neargit
 Host linux-home
   HostName 192.168.2.159
   User nearsyh
-  IdentityFile ~/.ssh/liz.pub
-  SetEnv TERM=xterm-256color
   ForwardAgent yes
+  IdentityFile ~/.ssh/liz.pub
 '';
 
   home.file.".ssh" = {
