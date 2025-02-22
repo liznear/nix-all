@@ -10,9 +10,6 @@
   home.file.".ssh/config".text = ''
 ${prefix}
 
-Host *
-  IdentityAgent "${opAgent}"
-
 Host lizgit
   HostName github.com
   User git

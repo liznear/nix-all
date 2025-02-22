@@ -11,5 +11,8 @@
 
   imports = [
     ../common.nix
+    (import ../../home/ssh {
+      prefix = "";
+    })
   ];
 }
