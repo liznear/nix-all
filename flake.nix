@@ -42,7 +42,10 @@
 
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages = systemPackages { sys pkgs };
+      environment.systemPackages = systemPackages {
+        sys=sys;
+        pkgs=pkgs;
+      };
 
       environment.variables = {
         EDITOR = "vim";
@@ -133,7 +136,9 @@
     build_linux_system = {sys, pkgs}: home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        ((import ./hosts/linux-server) { systemPackages })
+        ((import ./hosts/linux-server) {
+          systemPackages=systemPackages;
+        })
       ];
     };
   in
