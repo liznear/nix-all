@@ -9,9 +9,12 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nix-homebrew, nixpkgs, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nix-homebrew, nixpkgs, agenix, home-manager }:
   let
     username = "nearsyh";
 
@@ -28,16 +31,17 @@
       }
     ];
 
-    systemPackages = { sys, pkgs, ...}: [
+    systemPackages = { sys, system, pkgs, ...}: [
       pkgs.vim
       pkgs.git
       pkgs.devbox
       pkgs.wget
       pkgs.just
       pkgs.uv
+      agenix.packages.${system}.default
     ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
-    configuration = sys: { pkgs, ... }: {
+    configuration = { sys, system } : { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
       nixpkgs.config.allowBroken = true;
 
@@ -46,6 +50,7 @@
       environment.systemPackages = systemPackages {
         sys=sys;
         pkgs=pkgs;
+        system=system;
       };
 
       environment.variables = {
@@ -91,7 +96,7 @@
       };
 
       # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+      nixpkgs.hostPlatform = system;
 
       homebrew = let
         extra = ((import (./hosts + "/${sys}/extra_brews.nix")) {});
@@ -122,7 +127,11 @@
         }
 
         # Configuration
-        (configuration sys)
+        (configuration {
+          sys=sys;
+          system="aarch64-darwin";
+        })
+        agenix.nixosModules.default
 
         # Home manager
         home-manager.darwinModules.home-manager
@@ -141,8 +150,10 @@
           systemPackages = systemPackages {
             sys=sys;
             pkgs=pkgs;
+            system="x86_64-linux";
           };
         })
+        agenix.nixosModules.default
       ];
     };
   in
