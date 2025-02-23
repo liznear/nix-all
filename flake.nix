@@ -111,6 +111,7 @@
         ];
         brews = [] ++ extra.brews;
         casks = [] ++ extra.casks;
+        masApps = {} // extra.masApps;
       };
     };
 

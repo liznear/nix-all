@@ -3,4 +3,5 @@
 {
   brews = [];
   casks = [];
+  masApps = {};
 }

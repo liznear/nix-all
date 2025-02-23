@@ -18,5 +18,9 @@
     "raycast"
     "steam"
     "whisky"
+    "anytype"
   ];
+  masApps = {
+    Flomo = 1665341561;
+  };
 }
