@@ -34,6 +34,7 @@
       pkgs.devbox
       pkgs.wget
       pkgs.just
+      pkgs.uv
     ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
     configuration = sys: { pkgs, ... }: {
