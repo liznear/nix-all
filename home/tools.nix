@@ -37,4 +37,8 @@
     };
     signing.format = "ssh";
   };
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
