@@ -41,10 +41,12 @@
       agenix.packages.${system}.default
     ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
-    configuration = { sys, system } : { pkgs, ... }: {
+    common = { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
       nixpkgs.config.allowBroken = true;
+    };
 
+    configuration = { sys, system } : { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = systemPackages {
@@ -128,6 +130,7 @@
         }
 
         # Configuration
+        common
         (configuration {
           sys=sys;
           system="aarch64-darwin";
@@ -147,6 +150,7 @@
     build_linux_system = {sys, pkgs}: home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
+        common
         ((import ./hosts/linux-server) {
           systemPackages = systemPackages {
             sys=sys;
