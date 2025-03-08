@@ -21,6 +21,7 @@
     "cherry-studio"
     "obsidian"
     "zotero"
+    "jetbrains-toolbox"
   ];
   masApps = {
     Flomo = 1665341561;
