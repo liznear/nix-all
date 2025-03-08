@@ -18,6 +18,7 @@
     "raycast"
     "steam"
     "whisky"
+    "cherry-studio"
   ];
   masApps = {
     Flomo = 1665341561;
