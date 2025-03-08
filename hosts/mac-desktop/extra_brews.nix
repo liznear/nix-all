@@ -20,6 +20,7 @@
     "whisky"
     "cherry-studio"
     "obsidian"
+    "zotero"
   ];
   masApps = {
     Flomo = 1665341561;
