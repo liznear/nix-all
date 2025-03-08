@@ -19,6 +19,7 @@
     "steam"
     "whisky"
     "cherry-studio"
+    "obsidian"
   ];
   masApps = {
     Flomo = 1665341561;
