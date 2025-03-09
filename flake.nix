@@ -95,6 +95,11 @@
           persistent-others = [];
           show-recents = false;
         };
+        NSGlobalDomain = {
+          InitialKeyRepeat = 1;
+          KeyRepeat = 1;
+          ApplePressAndHoldEnabled = true;
+        };
       };
 
       # The platform the configuration will be used on.
