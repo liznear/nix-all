@@ -7,7 +7,6 @@
 
   imports = [
     ../common.nix
-    ../../home/ghostty.nix
     ../../home/aerospace.nix
     (import ../../home/ssh {
       prefix = "

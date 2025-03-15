@@ -89,7 +89,6 @@
           autohide = false;
           persistent-apps = [
             "/Applications/Arc.app"
-            "/Applications/Ghostty.app"
             "${pkgs.vscode}/Applications/Visual Studio Code.app"
           ];
           persistent-others = [];

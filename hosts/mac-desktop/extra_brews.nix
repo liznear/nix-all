@@ -14,7 +14,6 @@
     "orbstack"
     "surge"
     "utm"
-    "ghostty"
     "raycast"
     "steam"
     "whisky"
@@ -22,6 +21,7 @@
     "obsidian"
     "zotero"
     "jetbrains-toolbox"
+    "iterm2"
   ];
   masApps = {
     Flomo = 1665341561;

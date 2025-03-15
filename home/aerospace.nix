@@ -24,7 +24,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 alt-h =         'focus --boundaries-action wrap-around-the-workspace left'
 alt-j =         'focus --boundaries-action wrap-around-the-workspace down'
 alt-k =         'focus --boundaries-action wrap-around-the-workspace up'
-alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
+alt-l =         'focus --boundaries-action wrap-around-the-workspace right'
 
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
@@ -92,12 +92,6 @@ k = 'resize height -50'
 l = 'resize width +50'
 enter = 'mode main'
 esc = 'mode main'
-
-[[on-window-detected]]
-if.app-id="com.mitchellh.ghostty"
-run= [
-  "layout tiling",
-]
 
 [[on-window-detected]]
 if.app-id = "com.apple.dt.Xcode"
