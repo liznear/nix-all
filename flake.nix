@@ -95,9 +95,9 @@
           show-recents = false;
         };
         NSGlobalDomain = {
-          InitialKeyRepeat = 1;
-          KeyRepeat = 1;
-          ApplePressAndHoldEnabled = true;
+          InitialKeyRepeat = 15;
+          KeyRepeat = 2;
+          ApplePressAndHoldEnabled = false;
         };
       };
 
