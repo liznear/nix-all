@@ -4,5 +4,5 @@
   pkgs.aerospace
   pkgs.vscode
   pkgs.nixfmt-rfc-style
-  pkgs.zed
+  pkgs.zed-editor
 ]
