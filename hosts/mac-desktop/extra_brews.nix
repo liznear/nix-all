@@ -3,6 +3,7 @@
 {
   brews = [
     "borders"
+    "repomix"
   ];
   casks = [
     "1password" # TODO: configuration
