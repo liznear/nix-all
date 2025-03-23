@@ -7,6 +7,7 @@
       enable = true;
       plugins = [
         "git"
+        "z"
       ];
     };
     shellAliases = {
