@@ -13,7 +13,6 @@
     shellAliases = {
       ll = "ls -la";
       j = "just";
-      z = "zellij";
       za = "zellij attach";
     };
     initExtra = ''
