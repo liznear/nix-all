@@ -26,6 +26,11 @@ Host linux-home
   ForwardAgent yes
   IdentityFile ~/.ssh/liz.pub
   SetEnv TERM=xterm-256color
+
+Host umbrel
+  HostName 192.168.2.207
+  User umbrel
+  ForwardAgent yes
 '';
 
   home.file.".ssh" = {
