@@ -63,6 +63,7 @@
 
       fonts.packages = [
         pkgs.nerd-fonts.mononoki
+        pkgs.barlow
       ];
 
       users.users.nearsyh = {
