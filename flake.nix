@@ -39,6 +39,7 @@
       pkgs.just
       pkgs.uv
       pkgs.asdf-vm
+      pkgs.tokei
       agenix.packages.${system}.default
     ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
