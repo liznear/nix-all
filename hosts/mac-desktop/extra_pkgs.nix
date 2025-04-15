@@ -6,4 +6,5 @@
   pkgs.nixfmt-rfc-style
   pkgs.zed-editor
   pkgs.google-chrome
+  pkgs.rustup
 ]
