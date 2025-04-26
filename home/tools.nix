@@ -30,6 +30,7 @@
   };
   programs.git = {
     enable = true;
+    lfs.enable = true;
     userEmail = "nearsy.h@gmail.com";
     userName = "nearsyh";
     extraConfig = {

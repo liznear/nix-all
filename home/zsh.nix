@@ -15,7 +15,7 @@
       j = "just";
       za = "zellij attach";
     };
-    initExtra = ''
+    initContent = ''
 function dinit() {
   nix flake init --template "https://flakehub.com/f/the-nix-way/dev-templates/*#$1"
 }
