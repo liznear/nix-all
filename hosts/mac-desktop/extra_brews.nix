@@ -4,6 +4,7 @@
   brews = [
     "borders"
     "repomix"
+    "git-lfs"
   ];
   casks = [
     "1password" # TODO: configuration
