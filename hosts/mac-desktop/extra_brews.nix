@@ -2,7 +2,10 @@
 
 {
   brews = [
-    "borders"
+    {
+      name = "borders";
+      start_service = true;
+    }
     "repomix"
     "git-lfs"
   ];

@@ -8,6 +8,7 @@
   imports = [
     ../common.nix
     ../../home/aerospace.nix
+    ../../home/borders.nix
     (import ../../home/ssh {
       prefix = "
 Host *
