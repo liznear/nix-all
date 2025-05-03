@@ -74,12 +74,12 @@ alt-shift-c = 'reload-config'
 alt-r = 'mode resize'
 
 [gaps]
-inner.horizontal = 10
-inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
+inner.horizontal = 16
+inner.vertical =   16
+outer.left =       16
+outer.bottom =     16
+outer.top =        16
+outer.right =      16
 
 [mode.resize.binding]
 h = 'resize width -50'
