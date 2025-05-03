@@ -27,6 +27,7 @@
     "zotero"
     "jetbrains-toolbox"
     "iterm2"
+    "trae"
   ];
   masApps = {
     Flomo = 1665341561;
