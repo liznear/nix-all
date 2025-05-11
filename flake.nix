@@ -117,6 +117,7 @@
         onActivation.upgrade = true;
         taps = [
           "FelixKratz/formulae"
+          "tursodatabase/tap"
         ];
         brews = [] ++ extra.brews;
         casks = [] ++ extra.casks;
