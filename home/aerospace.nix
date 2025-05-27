@@ -14,6 +14,9 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+[mode.service.binding]
+f = [ 'layout floating tiling', 'mode main' ]
+
 [mode.main.binding]
 
 # i3 wraps focus by default
@@ -72,6 +75,7 @@ alt-shift-0 = 'move-node-to-workspace 10'
 alt-shift-c = 'reload-config'
 
 alt-r = 'mode resize'
+alt-shift-semicolon = 'mode service'
 
 [gaps]
 inner.horizontal = 16
