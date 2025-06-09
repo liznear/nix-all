@@ -3,9 +3,9 @@
 git add -A
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  darwin-rebuild switch --flake ".#mac-${MACHINE}"
+  sudo darwin-rebuild switch --flake ".#mac-${MACHINE}"
 else
-  nix --extra-experimental-features "nix-command flakes" \
+  sudo nix --extra-experimental-features "nix-command flakes" \
     run nixpkgs#home-manager -- \
     --extra-experimental-features "nix-command flakes" \
     switch --flake ".#linux-${MACHINE}"
