@@ -29,6 +29,7 @@
     "jetbrains-toolbox"
     "iterm2"
     "trae"
+    "ledger-live"
   ];
   masApps = {
     Flomo = 1665341561;
