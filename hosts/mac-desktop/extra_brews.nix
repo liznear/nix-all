@@ -30,6 +30,7 @@
     "iterm2"
     "trae"
     "ledger-live"
+    "folo"
   ];
   masApps = {
     Flomo = 1665341561;
