@@ -31,6 +31,7 @@
     "trae"
     "ledger-live"
     "folo"
+    "zed"
   ];
   masApps = {
     Flomo = 1665341561;
