@@ -12,18 +12,16 @@
   ];
   casks = [
     "1password" # TODO: configuration
-    "arc"
+    "thebrowsercompany-dia"
     "chatgpt"
     "jordanbaird-ice"
     "linearmouse"
     "loop"
     "orbstack"
     "surge"
-    "utm"
     "raycast"
     "steam"
     "whisky"
-    "cherry-studio"
     "obsidian"
     "zotero"
     "jetbrains-toolbox"
@@ -32,6 +30,7 @@
     "ledger-live"
     "zed"
     "reader"
+    "lm-studio"
   ];
   masApps = {
     Flomo = 1665341561;

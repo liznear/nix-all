@@ -92,8 +92,8 @@
         dock = {
           autohide = false;
           persistent-apps = [
-            "/Applications/Arc.app"
-            "${pkgs.vscode}/Applications/Visual Studio Code.app"
+            "/Applications/Zed.app"
+            "/Applications/Reader.app"
           ];
           persistent-others = [];
           show-recents = false;
