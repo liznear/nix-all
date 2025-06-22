@@ -167,7 +167,7 @@
             system="x86_64-linux";
           };
         })
-        agenix.nixosModules.default
+        agenix.homeManagerModules.default
       ];
     };
   in
