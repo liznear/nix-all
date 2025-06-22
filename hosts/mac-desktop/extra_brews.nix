@@ -9,6 +9,7 @@
     "repomix"
     "git-lfs"
     "tursodatabase/tap/turso"
+    "ollama"
   ];
   casks = [
     "1password" # TODO: configuration
