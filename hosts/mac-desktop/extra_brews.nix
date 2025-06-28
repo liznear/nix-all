@@ -32,6 +32,7 @@
     "zed"
     "reader"
     "lm-studio"
+    "crossover"
   ];
   masApps = {
     Flomo = 1665341561;
