@@ -10,6 +10,7 @@
     "git-lfs"
     "tursodatabase/tap/turso"
     "ollama"
+    "sniffnet"
   ];
   casks = [
     "1password" # TODO: configuration
