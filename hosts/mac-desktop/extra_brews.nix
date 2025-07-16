@@ -34,6 +34,7 @@
     "reader"
     "lm-studio"
     "crossover"
+    "google-chrome"
   ];
   masApps = {
     Flomo = 1665341561;
