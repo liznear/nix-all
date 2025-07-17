@@ -93,8 +93,9 @@
         dock = {
           autohide = false;
           persistent-apps = [
+            "/Applications/Google Chrome.app"
+            "/Applications/Obsidian.app"
             "/Applications/Zed.app"
-            "/Applications/Reader.app"
           ];
           persistent-others = [];
           show-recents = false;

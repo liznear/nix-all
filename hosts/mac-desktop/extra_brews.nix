@@ -4,7 +4,7 @@
   brews = [
     {
       name = "borders";
-      start_service = true;
+      start_service = false;
     }
     "repomix"
     "git-lfs"
@@ -13,8 +13,7 @@
     "sniffnet"
   ];
   casks = [
-    "1password" # TODO: configuration
-    "thebrowsercompany-dia"
+    "1password"
     "chatgpt"
     "jordanbaird-ice"
     "linearmouse"
@@ -23,20 +22,16 @@
     "surge"
     "raycast"
     "steam"
-    "whisky"
     "obsidian"
     "zotero"
     "jetbrains-toolbox"
     "iterm2"
-    "trae"
     "ledger-live"
     "zed"
-    "reader"
     "lm-studio"
     "crossover"
     "google-chrome"
+    "kiro"
   ];
-  masApps = {
-    Flomo = 1665341561;
-  };
+  masApps = {};
 }
