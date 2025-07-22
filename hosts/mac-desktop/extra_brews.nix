@@ -32,6 +32,7 @@
     "crossover"
     "google-chrome"
     "kiro"
+    "trae"
   ];
   masApps = {};
 }
