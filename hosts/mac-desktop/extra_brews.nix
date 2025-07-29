@@ -6,7 +6,6 @@
       name = "borders";
       start_service = false;
     }
-    "repomix"
     "git-lfs"
     "tursodatabase/tap/turso"
     "ollama"
@@ -33,6 +32,7 @@
     "google-chrome"
     "kiro"
     "trae"
+    "visual-studio-code"
   ];
   masApps = {};
 }

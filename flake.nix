@@ -95,7 +95,7 @@
           persistent-apps = [
             "/Applications/Google Chrome.app"
             "/Applications/Obsidian.app"
-            "/Applications/Zed.app"
+            "/Applications/Visual Studio Code.app"
           ];
           persistent-others = [];
           show-recents = false;
