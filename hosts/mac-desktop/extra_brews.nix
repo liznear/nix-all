@@ -8,8 +8,8 @@
     }
     "git-lfs"
     "tursodatabase/tap/turso"
-    "ollama"
     "sniffnet"
+    "dasht"
   ];
   casks = [
     "1password"
