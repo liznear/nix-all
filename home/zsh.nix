@@ -25,6 +25,8 @@ function dinit() {
 autoload -Uz bashcompinit && bashcompinit
 . "${pkgs.asdf-vm}/share/asdf-vm/completions/asdf.bash"
 . ~/.asdf/plugins/golang/set-env.zsh
+
+export PATH="$HOME/.cargo/bin:$PATH"
 '';
     plugins = [
       {
