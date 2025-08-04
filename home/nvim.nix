@@ -12,7 +12,16 @@
     plugins = with pkgs.vimPlugins; [
       mini-pick
       catppuccin-nvim
-	  nvim-lspconfig
+      nvim-lspconfig
+
+      {
+        plugin = (nvim-treesitter.withPlugins (p: [
+          p.tree-sitter-nix
+          p.tree-sitter-python
+          p.tree-sitter-rust
+          p.tree-sitter-go
+        ]));
+      }
     ];
 
     extraLuaConfig = ''
@@ -36,6 +45,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.cmd("set completeopt+=noselect")
 
 require "mini.pick".setup()
+require'nvim-treesitter.configs'.setup {
+	ensure_installed = {},
+	sync_install = false,
+	auto_install = false,
+	highlight = { enable = true },
+}
 
 vim.keymap.set('n', '<leader>f', ":Pick files<CR>")
 vim.keymap.set('n', '<leader>h', ":Pick help<CR>")
