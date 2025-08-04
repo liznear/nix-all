@@ -13,5 +13,6 @@
     ../home/zsh.nix
     ../home/starship.nix
     ../home/tools.nix
+    ../home/nvim.nix
   ];
 }

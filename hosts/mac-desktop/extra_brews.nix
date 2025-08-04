@@ -13,6 +13,7 @@
   ];
   casks = [
     "1password"
+    "1password-cli"
     "chatgpt"
     "jordanbaird-ice"
     "linearmouse"

@@ -27,6 +27,8 @@ autoload -Uz bashcompinit && bashcompinit
 . ~/.asdf/plugins/golang/set-env.zsh
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export GITHUB_TOKEN=op://Private/GitHub_Liz/token
 '';
     plugins = [
       {
