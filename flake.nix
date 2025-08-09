@@ -37,6 +37,7 @@
       pkgs.devbox
       pkgs.wget
       pkgs.just
+	  pkgs.taskwarrior3
       pkgs.uv
       pkgs.asdf-vm
       pkgs.tokei
