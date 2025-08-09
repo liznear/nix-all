@@ -28,6 +28,7 @@ autoload -Uz bashcompinit && bashcompinit
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export GITHUB_TOKEN=op://Private/GitHub_Liz/token
+export OPENROUTER_API_KEY="op://Private/OpenRouter/Saved on openrouter.ai/Marimo"
 '';
     plugins = [
       {
