@@ -41,6 +41,7 @@
       pkgs.uv
       pkgs.asdf-vm
       pkgs.tokei
+	  pkgs.cmake
       agenix.packages.${system}.default
     ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
