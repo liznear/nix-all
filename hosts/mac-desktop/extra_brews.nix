@@ -34,6 +34,7 @@
     "kiro"
     "trae"
     "visual-studio-code"
+	"wechatwork"
   ];
   masApps = {};
 }
