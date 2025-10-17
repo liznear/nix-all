@@ -95,8 +95,9 @@
         dock = {
           autohide = false;
           persistent-apps = [
-            "/Applications/Google Chrome.app"
+            "/Applications/Vivaldi.app"
             "/Applications/Obsidian.app"
+            "/Applications/Zed.app"
             "/Applications/Visual Studio Code.app"
           ];
           persistent-others = [];
@@ -123,6 +124,8 @@
         taps = [
           "FelixKratz/formulae"
           "tursodatabase/tap"
+          "brewforge/chinese"
+          "brewforge/extras"
         ];
         brews = [] ++ extra.brews;
         casks = [] ++ extra.casks;

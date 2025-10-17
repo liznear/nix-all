@@ -34,7 +34,8 @@
     "kiro"
     "trae"
     "visual-studio-code"
-	"wechatwork"
+	"vivaldi"
+	"quarkclouddrive"
   ];
   masApps = {};
 }
