@@ -32,6 +32,14 @@ Host umbrel
   HostName 192.168.2.207
   User umbrel
   ForwardAgent yes
+
+Host freebsd
+  HostName 192.168.64.2
+  User nearsyh
+  RemoteCommand /compat/linux/usr/bin/bash
+  RequestTTY force
+  IdentityFile ~/.ssh/liz.pub
+  ForwardAgent yes
 '';
 
   home.file.".ssh" = {

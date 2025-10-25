@@ -32,9 +32,9 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userEmail = "nearsy.h@gmail.com";
-    userName = "nearsyh";
-    extraConfig = {
+    settings = {
+      user.email = "nearsy.h@gmail.com";
+      user.name = "nearsyh";
       init.defaultBranch = "main";
     };
     signing.format = "ssh";

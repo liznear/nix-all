@@ -36,6 +36,7 @@
     "visual-studio-code"
 	"vivaldi"
 	"quarkclouddrive"
+	"utm"
   ];
   masApps = {};
 }
