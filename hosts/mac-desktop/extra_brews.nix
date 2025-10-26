@@ -28,15 +28,13 @@
     "iterm2"
     "ledger-live"
     "zed"
-    "lm-studio"
     "crossover"
     "google-chrome"
-    "kiro"
-    "trae"
     "visual-studio-code"
 	"vivaldi"
 	"quarkclouddrive"
 	"utm"
+	"chatgpt-atlas"
   ];
   masApps = {};
 }
