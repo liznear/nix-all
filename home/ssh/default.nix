@@ -33,6 +33,11 @@ Host umbrel
   User umbrel
   ForwardAgent yes
 
+Host nixos-vm
+  HostName nixos
+  User nearsyh
+  IdentityFile ~/.ssh/liz.pub
+
 Host freebsd
   HostName 192.168.64.2
   User nearsyh
