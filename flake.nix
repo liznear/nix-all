@@ -1,5 +1,5 @@
 {
-  description = "Example nix-darwin system flake";
+  description = "Nix config for Mac + Linux";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -37,11 +37,11 @@
       pkgs.devbox
       pkgs.wget
       pkgs.just
-	  pkgs.go-task
+      pkgs.go-task
       pkgs.uv
       pkgs.asdf-vm
       pkgs.tokei
-	  pkgs.cmake
+      pkgs.cmake
       agenix.packages.${system}.default
     ] ++ ((import (./hosts + "/${sys}/extra_pkgs.nix")) pkgs);
 
@@ -177,6 +177,19 @@
         agenix.homeManagerModules.default
       ];
     };
+
+    build_nixos_system = {sys, pkgs}: nixpkgs.lib.nixosSystem rec {
+      modules = [
+        ((import ./hosts/${sys}) {
+          systemPackages = systemPackages {
+            sys=sys;
+            pkgs=pkgs;
+            system="aarch64-linux";
+          };
+          home-manager = home-manager;
+        })
+      ];
+    };
   in
   {
     # Build darwin flake using:
@@ -194,6 +207,11 @@
     homeConfigurations."linux-server" = build_linux_system {
       sys = "linux-server";
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    };
+
+    nixosConfigurations."nixos-vm" = build_nixos_system {
+      sys = "nixos-vm";
+      pkgs = nixpkgs.legacyPackages.aarch64-linux;
     };
   };
 }
