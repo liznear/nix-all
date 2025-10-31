@@ -12,9 +12,11 @@
 
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = inputs@{ self, nix-darwin, nix-homebrew, nixpkgs, agenix, home-manager }:
+  outputs = { self, nix-darwin, nix-homebrew, nixpkgs, agenix, home-manager, hyprland } @ inputs:
   let
     username = "nearsyh";
 
@@ -77,11 +79,16 @@
       };
 
       # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
-      nix.settings.trusted-users = ["root" "nearsyh"];
-      nix.settings.substituters = [
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
-      ];
+      nix.settings = {
+        experimental-features = "nix-command flakes";
+        trusted-users = ["root" "nearsyh"];
+
+        substituters = ["https://hyprland.cachix.org"];
+        trusted-substituters = ["https://hyprland.cachix.org"];
+        trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+
+        #  "https://mirrors.ustc.edu.cn/nix-channels/store"
+      };
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -179,6 +186,7 @@
     };
 
     build_nixos_system = {sys, pkgs}: nixpkgs.lib.nixosSystem rec {
+      specialArgs = { inherit inputs; };
       modules = [
         ((import ./hosts/${sys}) {
           systemPackages = systemPackages {
