@@ -77,12 +77,18 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = systemPackages;
+  environment = {
+    variables = {
+      LIBGL_ALWAYS_SOFTWARE = "1";
+    };
+    systemPackages = systemPackages;
+  };
 
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+	# xwayland.enable = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -97,6 +103,8 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.spice-vdagentd.enable = true;
+  services.qemuGuest.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
