@@ -35,6 +35,7 @@
 	"quarkclouddrive"
 	"utm"
 	"chatgpt-atlas"
+	"virtualbox"
   ];
   masApps = {};
 }

@@ -95,7 +95,7 @@
         dock = {
           autohide = false;
           persistent-apps = [
-            "/Applications/Vivaldi.app"
+            "/Applications/Google Chrome.app"
             "/Applications/Obsidian.app"
             "/Applications/Zed.app"
             "/Applications/Visual Studio Code.app"

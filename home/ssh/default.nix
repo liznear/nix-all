@@ -34,7 +34,7 @@ Host umbrel
   ForwardAgent yes
 
 Host nixos-vm
-  HostName nixos
+  HostName 192.168.64.3
   User nearsyh
   IdentityFile ~/.ssh/liz.pub
 
