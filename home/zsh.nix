@@ -20,9 +20,9 @@ function dinit() {
 }
 
 # asdf
-. "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+export PATH="~/.asdf/shims:$PATH"
+. "${pkgs.asdf-vm}/share/bash-completion/completions/asdf.bash"
 autoload -Uz bashcompinit && bashcompinit
-. "${pkgs.asdf-vm}/share/asdf-vm/completions/asdf.bash"
 . ~/.asdf/plugins/golang/set-env.zsh
 
 export PATH="$HOME/.cargo/bin:$PATH"
